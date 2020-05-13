@@ -1,5 +1,6 @@
 import { Rule, chain, apply, url, move, applyTemplates, filter, noop } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
+import { common } from '@vicoders/cli-support';
 
 export default function handler(options: any): Rule {
   const templateSource = apply(url('./files/slider'), [
@@ -11,5 +12,5 @@ export default function handler(options: any): Rule {
     move(options.path)
   ]);
   console.log(11111111);
-  return chain([]);
+  return chain([common.console.exec('ls', '-al')]);
 }
